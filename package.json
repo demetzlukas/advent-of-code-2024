@@ -4,7 +4,9 @@
   "description": "Solutions for Advent of Code 2024",
   "main": "./bin/index.js",
   "scripts": {
-    "run:js": "node ./bin/index.js"
+    "run:js": "node ./bin/index.js",
+    "run:ts": "ts-node ./src/index.ts",
+    "build": "tsc"
   },
   "author": "Lukas Demetz",
   "license": "ISC",
