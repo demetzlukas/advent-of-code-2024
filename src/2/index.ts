@@ -30,8 +30,7 @@ function checkForValid(input: number[][], remove = false) {
 
 function isValid(line: number[]) {
   const descending = line[0] > line[1];
-  let i = 0;
-  for (i = 0; i < line.length - 1; i++) {
+  for (let i = 0; i < line.length - 1; i++) {
     if (line[i] > line[i + 1] !== descending) {
       return false;
     }
@@ -40,5 +39,5 @@ function isValid(line: number[]) {
       return false;
     }
   }
-  return i === line.length - 1;
+  return true;
 }
