@@ -9,13 +9,7 @@ export function getAdjacent(
       const dx = row + x;
       const dy = column + y;
 
-      if (
-        dx < 0 ||
-        dx >= field.length ||
-        dy < 0 ||
-        dy >= field[row].length ||
-        (dx == 0 && dy == 0)
-      ) {
+      if (!isInBounds(field, dx, dy) || (dx === 0 && dy === 0)) {
         continue;
       }
       adjacent.push([dx, dy]);
@@ -27,4 +21,10 @@ export function getAdjacent(
 
 export function rotate(array: any[][]): any[][] {
   return array[0].map((_, c) => array.map((_, r) => array[r][c]).reverse());
+}
+
+export function isInBounds(field: any[][], row: number, column: number) {
+  return (
+    row >= 0 && row < field.length && column >= 0 && column < field[row].length
+  );
 }
